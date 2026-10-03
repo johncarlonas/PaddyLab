@@ -57,7 +57,10 @@ h1 span { color: var(--green); }
 #replace-label { position: absolute; bottom: 15px; padding: 8px 14px; border-radius: 6px; background: var(--surface); font-size: 12px; font-weight: 800; }
 .file-info { display: flex; justify-content: space-between; align-items: center; gap: 16px; color: var(--muted); margin-top: 16px; min-height: 22px; font-size: 12px; }
 .file-info.is-empty { justify-content: center; text-align: center; }
-.file-info > span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.file-label { display: flex; min-width: 0; flex: 1; align-items: center; gap: 4px; }
+.file-name { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.file-size { flex-shrink: 0; white-space: nowrap; }
+.file-info.is-empty > .file-label { flex: 0 1 auto; justify-content: center; }
 .file-info > button { flex-shrink: 0; }
 .results-panel { display: flex; flex-direction: column; padding: 38px; }
 .result-empty { flex: 1; align-self: center; display: flex; flex-direction: column; justify-content: center; width: min(100%, 315px); max-width: 315px; text-align: center; }

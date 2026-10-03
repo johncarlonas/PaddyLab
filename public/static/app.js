@@ -18,7 +18,8 @@ function setFile(file) {
   $('#replace-label').hidden = false;
   $('#clear').hidden = false;
   $('.file-info').classList.remove('is-empty');
-  $('#filename').textContent = `${file.name} · ${(file.size / 1024).toFixed(0)} KB`;
+  $('#filename').textContent = file.name;
+  $('#file-size').textContent = ` · ${(file.size / 1024).toFixed(0)} KB`;
   $('#analyze').disabled = false;
   $('#result').hidden = true;
   $('#result-empty').hidden = false;
@@ -41,6 +42,7 @@ $('#clear').addEventListener('click', () => {
   $('#clear').hidden = true;
   $('.file-info').classList.add('is-empty');
   $('#filename').textContent = 'No image selected';
+  $('#file-size').textContent = '';
   $('#analyze').disabled = true;
   $('#result').hidden = true;
   $('#result-empty').hidden = false;
