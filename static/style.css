@@ -144,7 +144,7 @@ h1 span { color: var(--green); }
   .analyzer-heading .text-button { font-size: 12px; }
   .analyzer-heading .model-status { font-size: 15px; }
   .analyzer-body { grid-template-columns: 1fr; }
-  .image-panel { border-right: 0; padding: 20px 20px 0; }
+  .image-panel { border-right: 0; padding: 20px; }
   .dropzone { min-height: 285px; }
   #preview { height: 285px; }
   .file-info { margin-top: 13px; font-size: 11px; }

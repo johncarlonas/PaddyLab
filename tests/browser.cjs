@@ -39,6 +39,7 @@ const assert = require('node:assert/strict');
   assert.equal(await page.locator('.page-intro > p').evaluate(element => getComputedStyle(element).textAlign), 'justify');
   assert.equal(await page.locator('.page-intro > p').evaluate(element => Math.round(element.getBoundingClientRect().width) === Math.round(element.parentElement.getBoundingClientRect().width)), true);
   assert.equal(await page.locator('.results-panel').evaluate(element => getComputedStyle(element).borderTopWidth), '1px');
+  assert.equal(await page.locator('.image-panel').evaluate(element => getComputedStyle(element).paddingBottom), '20px');
   assert.equal(await page.locator('.analyze').evaluate(element => getComputedStyle(element).justifyContent), 'center');
   assert.equal(await page.locator('.model-note').evaluate(element => getComputedStyle(element).textAlign), 'center');
   await page.screenshot({path: 'tests/mobile.png', fullPage: true});
