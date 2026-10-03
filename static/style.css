@@ -94,6 +94,7 @@ h1 span { color: var(--green); }
 .about-details { display: grid; grid-template-columns: 1fr; gap: 56px; padding: 56px 0; }
 .about-detail:last-child { max-width: none; }
 .about-detail h2, .classes-heading h2 { font-size: clamp(26px, 3vw, 38px); font-weight: 900; line-height: 1.1; letter-spacing: -.05em; }
+.about-description, .about-detail p, .class-copy p { text-align: justify; text-justify: inter-word; }
 .about-detail p { max-width: none; color: var(--muted); line-height: 1.85; margin-top: 16px; font-size: 16px; }
 .classes-section { padding-top: 8px; }
 .classes-heading { margin-bottom: 38px; }
