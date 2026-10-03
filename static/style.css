@@ -82,9 +82,9 @@ h1 span { color: var(--green); }
 .analyze:hover:enabled { background: #32633b; }
 .analyze:disabled { background: #dce3d6; color: #899580; }
 .model-note { margin: 0; max-width: 390px; font-size: 12px; line-height: 1.55; color: var(--muted); }
-.site-footer { display: flex; justify-content: space-between; align-items: center; color: var(--muted); font-size: 12px; padding: 72px 0 40px; }
-.site-footer > span { font-weight: 900; }
-.site-footer a:hover { color: var(--green); }
+.site-footer { display: flex; align-items: center; color: var(--muted); font-size: 12px; padding: 72px 0 40px; }
+.footer-brand { display: inline-flex; align-items: center; gap: 8px; font-weight: 600; }
+.footer-brand img { flex: 0 0 auto; }
 .classes-intro { padding-bottom: 72px; }
 .classes-intro > p { max-width: 540px; }
 .class-row { display: grid; grid-template-columns: 1fr 1fr; gap: 84px; align-items: center; margin-bottom: 96px; }
@@ -92,8 +92,6 @@ h1 span { color: var(--green); }
 .class-photo img { width: 100%; height: 100%; object-fit: cover; }
 .class-copy h2 { font-size: clamp(29px, 3.4vw, 42px); font-weight: 900; line-height: 1.08; letter-spacing: -.05em; }
 .class-copy p { max-width: 360px; color: var(--muted); line-height: 1.8; margin-top: 22px; }
-.sample-link { display: inline-flex; gap: 18px; font-size: 14px; font-weight: 900; color: var(--green); margin-top: 25px; }
-.sample-link:hover { text-decoration: underline; text-underline-offset: 5px; }
 .model-info { border-top: 1px solid var(--line); padding-top: 64px; }
 .model-info h2 { font-size: 42px; font-weight: 900; letter-spacing: -.05em; }
 .model-info-body { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; margin-top: 26px; color: var(--muted); font-size: 15px; line-height: 1.9; }
@@ -147,7 +145,6 @@ h1 span { color: var(--green); }
   .class-photo { height: 280px; border-radius: 14px; }
   .class-copy h2 { font-size: 32px; }
   .class-copy p { font-size: 15px; margin-top: 15px; }
-  .sample-link { margin-top: 18px; font-size: 13px; }
   .model-info { padding-top: 38px; }
   .model-info h2 { font-size: 32px; }
   .model-info-body { grid-template-columns: 1fr; gap: 20px; font-size: 14px; }

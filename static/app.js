@@ -72,7 +72,7 @@ function setBusy(value) {
     $('#analyze').textContent = 'Analyzing…';
     $('#result-empty h3').textContent = 'Analyzing your photo…';
   } else {
-    $('#analyze').innerHTML = 'Analyze photo <span aria-hidden="true">→</span>';
+    $('#analyze').textContent = 'Analyze Photo';
     $('#result-empty h3').textContent = 'Your result goes here.';
   }
 }
