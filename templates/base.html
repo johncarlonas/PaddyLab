@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Upload a rice leaf photo and explore the predictions from the original six-class CNN.">
+  <title>{% block title %}PaddyLab — Rice leaf analysis{% endblock %}</title>
+  <link rel="icon" href="/static/leaf.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/style.css">
+  <link rel="stylesheet" href="/static/lenis.css">
+  <script src="/static/lenis.min.js" defer></script>
+  <script src="/static/motion.js" defer></script>
+  {% block scripts %}{% endblock %}
+</head>
+<body>
+    <header class="site-header shell">
+      <a class="brand" href="/" aria-label="PaddyLab home"><img src="/static/leaf.svg" alt="" width="30" height="30">PaddyLab</a>
+      <nav aria-label="Main navigation">
+        <a href="/" {% if request.path == '/' %}aria-current="page"{% endif %}>Analyze</a>
+        <a href="/classes" {% if request.path == '/classes' %}aria-current="page"{% endif %}>Classes <span aria-hidden="true">↗</span></a>
+      </nav>
+    </header>
+    <main class="shell">{% block content %}{% endblock %}</main>
+    <footer class="site-footer shell"><span>PaddyLab</span><a href="/classes#model">About the model <span aria-hidden="true">↗</span></a></footer>
+</body>
+</html>

@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block title %}The six classes — PaddyLab{% endblock %}
+{% block content %}
+  <section class="page-intro classes-intro" data-reveal>
+    <h1>The six <span>classes.</span></h1>
+    <p>The labels the model learned. Each photo comes from the original test dataset.</p>
+  </section>
+  <div class="class-list">
+    {% for key, label, description in guide %}
+    <article class="class-row" data-reveal>
+      <div class="class-photo"><img src="/api/samples/{{ key }}" alt="{{ label }} rice leaf from the test dataset" {% if not loop.first %}loading="lazy"{% endif %}></div>
+      <div class="class-copy"><h2>{{ label }}</h2><p>{{ description }}</p><a class="sample-link" href="/?sample={{ key }}">Analyze this sample <span aria-hidden="true">↗</span></a></div>
+    </article>
+    {% endfor %}
+  </div>
+  <section class="model-info" id="model" data-reveal>
+    <h2>About the model.</h2>
+    <div class="model-info-body">
+      <p>This is the original CNN v2 from the student project. Three convolution blocks feed a dense classifier. Photos are resized to 256 × 256 pixels and normalized before prediction.</p>
+      <p>The model always chooses among these six labels, even for unrelated photos. Confidence is a softmax score. The notebook’s shuffled validation split needs an independent evaluation before reliable accuracy can be claimed.</p>
+    </div>
+    <a class="sample-link" href="/">Back to the analyzer <span aria-hidden="true">↗</span></a>
+  </section>
+{% endblock %}

@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% block scripts %}<script src="/static/app.js" defer></script>{% endblock %}
+{% block content %}
+  <section class="page-intro" data-reveal>
+    <h1>Rice leaf <span>analysis.</span></h1>
+    <p>Choose a photo. See what the model sees.</p>
+  </section>
+
+  <section class="analyzer" id="workspace" aria-label="Rice leaf analyzer" data-reveal>
+    <div class="analyzer-heading">
+      <h2>Leaf analyzer</h2>
+      <button class="text-button" data-sample="healthy" type="button">Try a sample <span aria-hidden="true">↗</span></button>
+    </div>
+    <div class="analyzer-body">
+      <div class="image-panel">
+        <label class="dropzone" id="dropzone" for="image-input">
+          <input type="file" id="image-input" accept="image/jpeg,image/png,image/webp" aria-label="Choose a rice leaf photo">
+          <div id="upload-empty">
+            <svg class="upload-icon" width="64" height="64" viewBox="0 0 64 64" fill="none" aria-hidden="true"><rect x="9" y="9" width="46" height="46" rx="12" stroke="currentColor" stroke-width="2.5"/><circle cx="23" cy="23" r="4" stroke="currentColor" stroke-width="2.5"/><path d="m11 44 12-11 10 9 9-17 12 20" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <h3>Drop a leaf photo here.</h3>
+            <span class="choose-photo">Choose a photo <span aria-hidden="true">↑</span></span>
+            <p>JPG, PNG or WebP. Up to 10 MB.</p>
+          </div>
+          <img id="preview" alt="Selected rice leaf" hidden>
+          <span id="replace-label" hidden>Choose a different photo</span>
+        </label>
+        <div class="file-info"><span id="filename">No image selected</span><button class="text-button" id="clear" type="button" hidden>Remove</button></div>
+      </div>
+      <div class="results-panel" aria-live="polite" aria-busy="false">
+        <div id="result-empty" class="result-empty">
+          <h3>Your result goes here.</h3>
+          <p>Add a photo and run the analysis to see the closest match and its confidence.</p>
+        </div>
+        <div id="result" hidden>
+          <h3 id="result-label"></h3>
+          <div class="confidence"><strong id="confidence"></strong><span>model confidence</span></div>
+          <div class="confidence-track"><span id="confidence-fill"></span></div>
+          <p id="result-description"></p>
+          <p class="uncertain" id="uncertain" hidden>The model is uncertain. Try a clearer photo.</p>
+          <details class="class-scores"><summary>All class scores</summary><div id="scores"></div></details>
+          <button id="download" class="text-button" type="button">Download result <span aria-hidden="true">↓</span></button>
+        </div>
+        <p class="error" id="error" role="alert"></p>
+      </div>
+    </div>
+    <div class="analyzer-footer">
+      <span id="model-status" class="model-status">Connecting to the model…</span>
+      <button class="analyze" id="analyze" type="button" disabled>Analyze photo <span aria-hidden="true">→</span></button>
+    </div>
+  </section>
+  <p class="model-note">A prediction is a model estimate. It does not confirm disease.</p>
+{% endblock %}

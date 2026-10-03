@@ -1,0 +1,11 @@
+.venv/
+__pycache__/
+*.pyc
+.env
+tests/*.png
+tests/*.jpg
+dataset/
+Rice Leaf Disease Detection v1.h5
+.venv/
+__pycache__/
+tests/__pycache__/
