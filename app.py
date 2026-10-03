@@ -10,7 +10,7 @@ from PIL import Image, ImageOps, UnidentifiedImageError
 
 ROOT = Path(__file__).resolve().parent
 CLASSES = ['bacterial_leaf_blight', 'brown_spot', 'healthy', 'leaf_blast', 'leaf_scald', 'rice_hispa']
-LABELS = ['Bacterial leaf blight', 'Brown spot', 'Healthy', 'Leaf blast', 'Leaf scald', 'Rice hispa']
+LABELS = ['Bacterial Leaf Blight', 'Brown Spot', 'Healthy', 'Leaf Blast', 'Leaf Scald', 'Rice Hispa']
 DESCRIPTIONS = [
     'A class associated with blighted rice leaves. The model compares visual patterns with its training examples.',
     'A class associated with brown spotting on rice leaves. Similar-looking damage can lead to incorrect predictions.',
