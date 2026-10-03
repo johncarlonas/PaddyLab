@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Upload a rice leaf photo and explore the predictions from the original six-class CNN.">
-  <title>{% block title %}PaddyLab — Rice leaf analysis{% endblock %}</title>
+  <title>{% block title %}PaddyLab - Rice Disease Analyzer{% endblock %}</title>
   <link rel="icon" href="/static/leaf.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,8 +19,8 @@
     <header class="site-header shell">
       <a class="brand" href="/" aria-label="PaddyLab home"><img src="/static/leaf.svg" alt="" width="30" height="30">PaddyLab</a>
       <nav aria-label="Main navigation">
+        <a href="/classes" {% if request.path == '/classes' %}aria-current="page"{% endif %}>About</a>
         <a href="/" {% if request.path == '/' %}aria-current="page"{% endif %}>Analyze</a>
-        <a href="/classes" {% if request.path == '/classes' %}aria-current="page"{% endif %}>Classes</a>
       </nav>
     </header>
     <main class="shell">{% block content %}{% endblock %}</main>
