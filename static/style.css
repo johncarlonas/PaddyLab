@@ -18,14 +18,14 @@ button:focus-visible, a:focus-visible, summary:focus-visible { outline: 3px soli
 button:disabled { cursor: not-allowed; }
 [hidden] { display: none !important; }
 .shell { width: min(1120px, calc(100% - 80px)); margin-inline: auto; }
-.site-header { display: flex; justify-content: space-between; align-items: center; padding-block: 44px; }
+.site-header { display: flex; justify-content: space-between; align-items: center; padding-block: 27px; }
 .brand { display: inline-flex; align-items: center; gap: 10px; font-size: 24px; font-weight: 900; letter-spacing: -1px; }
 nav { display: flex; gap: 32px; align-items: center; font-size: 14px; font-weight: 800; }
 nav a { color: var(--muted); transition: color .2s; }
 nav a:hover, nav a[aria-current] { color: var(--ink); }
 nav a[aria-current] { text-decoration: underline; text-underline-offset: 7px; text-decoration-thickness: 2px; }
 nav span { margin-left: 4px; }
-.page-intro { padding: 47px 0 48px; }
+.page-intro { padding: 27px 0 48px; }
 h1, h2, h3, p { margin: 0; }
 h1 { font-size: clamp(42px, 5.1vw, 68px); font-weight: 900; line-height: 1.05; letter-spacing: -.055em; }
 h1 span { color: var(--green); }
@@ -57,6 +57,7 @@ h1 span { color: var(--green); }
 .result-empty { flex: 1; display: flex; flex-direction: column; justify-content: center; max-width: 315px; }
 .result-empty h3 { font-size: 29px; font-weight: 900; line-height: 1.15; letter-spacing: -1.2px; }
 .result-empty p { margin-top: 16px; font-size: 15px; color: var(--muted); line-height: 1.8; }
+.sample-action { display: inline-flex; margin-top: 22px; color: var(--green); }
 #result h3 { font-size: 29px; line-height: 1.12; font-weight: 900; letter-spacing: -1.3px; }
 .confidence { display: flex; align-items: baseline; gap: 12px; margin-top: 20px; }
 .confidence strong { font-size: 49px; font-weight: 900; letter-spacing: -2.5px; line-height: 1; color: var(--green); }
@@ -80,7 +81,7 @@ h1 span { color: var(--green); }
 .analyze { display: inline-flex; align-items: center; justify-content: space-between; gap: 40px; border: 0; background: var(--green); color: white; padding: 13px 22px; border-radius: 9px; font-size: 15px; font-weight: 900; transition: background .2s; }
 .analyze:hover:enabled { background: #32633b; }
 .analyze:disabled { background: #dce3d6; color: #899580; }
-.model-note { margin-top: 22px; font-size: 12px; color: var(--muted); }
+.model-note { margin: 0; max-width: 390px; font-size: 12px; line-height: 1.55; color: var(--muted); }
 .site-footer { display: flex; justify-content: space-between; align-items: center; color: var(--muted); font-size: 12px; padding: 72px 0 40px; }
 .site-footer > span { font-weight: 900; }
 .site-footer a:hover { color: var(--green); }
@@ -100,8 +101,8 @@ h1 span { color: var(--green); }
 .motion-ready [data-reveal].is-visible { opacity: 1; transform: translate3d(0,0,0); filter: blur(0); }
 @media (max-width: 850px) {
   .shell { width: calc(100% - 48px); }
-  .site-header { padding-block: 30px; }
-  .page-intro { padding: 42px 0 38px; }
+  .site-header { padding-block: 22px; }
+  .page-intro { padding: 25px 0 38px; }
   .page-intro > p { font-size: 17px; margin-top: 18px; }
   .image-panel { padding: 22px; }
   .results-panel { padding: 26px; }
@@ -116,11 +117,11 @@ h1 span { color: var(--green); }
 }
 @media (max-width: 650px) {
   .shell { width: calc(100% - 40px); }
-  .site-header { padding-block: 26px; }
+  .site-header { padding-block: 20px; }
   .brand { font-size: 22px; gap: 7px; }
   .brand img { width: 26px; height: 26px; }
   nav { font-size: 12px; gap: 19px; }
-  .page-intro { padding-top: 33px; }
+  .page-intro { padding-top: 22px; }
   h1 { font-size: 44px; max-width: 370px; }
   .page-intro > p { font-size: 16px; max-width: 300px; }
   .analyzer { border-radius: 18px; }
@@ -139,7 +140,7 @@ h1 span { color: var(--green); }
   .analyzer-footer { padding: 18px 20px; align-items: start; flex-direction: column-reverse; gap: 15px; }
   .analyze { width: 100%; }
   .model-status, .model-note { font-size: 11px; }
-  .model-note { margin-top: 18px; max-width: 310px; }
+  .model-note { max-width: 310px; }
   .site-footer { padding-top: 54px; }
   .classes-intro { padding-bottom: 44px; }
   .class-row { grid-template-columns: 1fr; gap: 24px; margin-bottom: 58px; }
