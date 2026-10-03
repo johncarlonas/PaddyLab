@@ -24,7 +24,6 @@
         {% else %}
         <a class="about-link" href="/about">About</a>
         {% endif %}
-        <a href="/" {% if request.path == '/' %}aria-current="page"{% endif %}>Analyze</a>
       </nav>
     </header>
     <main class="shell">{% block content %}{% endblock %}</main>

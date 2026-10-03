@@ -24,9 +24,9 @@ nav { display: flex; gap: 32px; align-items: center; font-size: 19px; font-weigh
 nav a { color: var(--muted); transition: color .2s; }
 nav a:hover, nav a[aria-current] { color: var(--ink); }
 nav a[aria-current] { text-decoration: underline; text-underline-offset: 7px; text-decoration-thickness: 2px; }
-nav a.about-link { display: inline-flex; align-items: center; justify-content: center; padding: 8px 14px; border-radius: 9px; background: var(--ink); color: white; }
-nav a.about-link:hover { background: #111811; color: white; }
-nav a.back-link { display: inline-flex; align-items: center; gap: 7px; }
+nav a.about-link, nav a.back-link { display: inline-flex; align-items: center; justify-content: center; padding: 8px 14px; border-radius: 9px; background: var(--ink); color: white; }
+nav a.about-link:hover, nav a.back-link:hover { background: #111811; color: white; }
+nav a.back-link { gap: 7px; }
 nav .back-arrow { margin-left: 0; font-size: 22px; line-height: 1; }
 nav .back-label-short { display: none; }
 .page-intro { padding: 27px 0 48px; }
