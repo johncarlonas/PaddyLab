@@ -55,10 +55,10 @@ h1 span { color: var(--green); }
 #upload-empty > p { margin-top: 19px; color: var(--muted); font-size: 12px; }
 #preview { width: 100%; height: 360px; object-fit: contain; background: #e9eddf; }
 #replace-label { position: absolute; bottom: 15px; padding: 8px 14px; border-radius: 6px; background: var(--surface); font-size: 12px; font-weight: 800; }
-.file-info { display: flex; justify-content: space-between; align-items: center; gap: 16px; color: var(--muted); margin-top: 16px; min-height: 22px; font-size: 12px; }
-.file-info.is-empty { justify-content: center; text-align: center; }
-.file-label { display: flex; min-width: 0; flex: 1; align-items: center; gap: 4px; }
-.file-name { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.file-info { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 16px; min-width: 0; color: var(--muted); margin-top: 16px; min-height: 22px; font-size: 12px; }
+.file-info.is-empty { display: flex; justify-content: center; text-align: center; }
+.file-label { display: flex; width: 100%; min-width: 0; align-items: center; gap: 4px; }
+.file-name { display: block; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .file-size { flex-shrink: 0; white-space: nowrap; }
 .file-info.is-empty > .file-label { flex: 0 1 auto; justify-content: center; }
 .file-info > button { flex-shrink: 0; }
