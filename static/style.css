@@ -82,7 +82,8 @@ h1 span { color: var(--green); }
 .analyze:hover:enabled { background: #32633b; }
 .analyze:disabled { background: #dce3d6; color: #899580; }
 .model-note { margin: 0; max-width: 390px; font-size: 12px; line-height: 1.55; color: var(--muted); }
-.site-footer { display: flex; align-items: center; color: var(--muted); font-size: 12px; padding: 72px 0 40px; }
+.site-footer { position: relative; display: flex; justify-content: center; align-items: center; color: var(--muted); font-size: 12px; padding: 72px 0 40px; }
+.site-footer::before { content: ''; position: absolute; inset: 0 0 auto; height: 1px; background: linear-gradient(90deg, transparent, var(--line) 14%, var(--line) 86%, transparent); }
 .footer-brand { display: inline-flex; align-items: center; gap: 8px; font-weight: 600; }
 .footer-brand img { flex: 0 0 auto; }
 .about-intro > p { max-width: 700px; }
