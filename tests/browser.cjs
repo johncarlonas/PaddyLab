@@ -42,6 +42,8 @@ const assert = require('node:assert/strict');
   assert.equal(await page.locator('.sample-link').count(), 0);
   assert.equal(await page.locator('.about-detail').count(), 2);
   assert.equal(await page.locator('.about-developer a').innerText(), 'John Carlo Nas');
+  assert.equal(await page.locator('.about-intro h1').evaluate(element => getComputedStyle(element).textAlign), 'center');
+  assert.equal(await page.locator('.about-developer').evaluate(element => getComputedStyle(element).textAlign), 'center');
   assert.equal(await page.locator('.about-intro > p').first().innerText(), 'Developer: John Carlo Nas');
   assert.equal(await page.locator('.about-description').innerText(), 'PaddyLab is my first AI model, developed as my final project for the Introduction to Artificial Intelligence course. It explores rice leaf conditions by analyzing photos and suggesting a likely class with a confidence score for further inspection.');
   assert.equal(await page.locator('.about-description').evaluate(element => getComputedStyle(element).textAlign), 'justify');

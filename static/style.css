@@ -133,6 +133,7 @@ h1 span { color: var(--green); }
   .page-intro { padding-top: 22px; }
   h1 { font-size: 44px; max-width: 370px; }
   .page-intro > p { font-size: 16px; max-width: 300px; }
+  .about-intro h1, .about-intro .about-developer { text-align: center; }
   .analyzer { border-radius: 18px; }
   .analyzer-heading { padding: 18px 20px; }
   .analyzer-heading h2 { font-size: 15px; }
