@@ -1,6 +1,6 @@
 const $ = (selector) => document.querySelector(selector);
 const sampleKeys = ['bacterial_leaf_blight', 'brown_spot', 'healthy', 'leaf_blast', 'leaf_scald', 'rice_hispa'];
-let selectedFile, previewUrl, reading, busy = false, selectionVersion = 0;
+let selectedFile, previewUrl, busy = false, selectionVersion = 0;
 const pct = (value) => `${(value * 100).toFixed(1)}%`;
 function showError(message) { $('#error').textContent = message; }
 function setFile(file) {
@@ -17,11 +17,11 @@ function setFile(file) {
   $('#upload-empty').hidden = true;
   $('#replace-label').hidden = false;
   $('#clear').hidden = false;
+  $('.file-info').classList.remove('is-empty');
   $('#filename').textContent = `${file.name} · ${(file.size / 1024).toFixed(0)} KB`;
   $('#analyze').disabled = false;
   $('#result').hidden = true;
   $('#result-empty').hidden = false;
-  reading = null;
   showError('');
 }
 $('#image-input').addEventListener('change', (event) => setFile(event.target.files[0]));
@@ -32,7 +32,6 @@ $('#clear').addEventListener('click', () => {
   if (busy) return;
   selectionVersion++;
   selectedFile = null;
-  reading = null;
   if (previewUrl) URL.revokeObjectURL(previewUrl);
   previewUrl = null;
   $('#image-input').value = '';
@@ -40,6 +39,7 @@ $('#clear').addEventListener('click', () => {
   $('#upload-empty').hidden = false;
   $('#replace-label').hidden = true;
   $('#clear').hidden = true;
+  $('.file-info').classList.add('is-empty');
   $('#filename').textContent = 'No image selected';
   $('#analyze').disabled = true;
   $('#result').hidden = true;
@@ -85,7 +85,6 @@ $('#analyze').addEventListener('click', async () => {
     const response = await fetch('/api/predict', { method: 'POST', body });
     const data = await response.json();
     if (!response.ok) throw new Error(data.error || 'Could not analyze this image.');
-    reading = { ...data, filename: selectedFile.name, analyzed_at: new Date().toISOString() };
     $('#result-label').textContent = data.prediction.label;
     $('#result-description').textContent = data.prediction.description;
     $('#confidence').textContent = pct(data.prediction.confidence);
@@ -102,12 +101,6 @@ $('#analyze').addEventListener('click', async () => {
     $('#result-empty').hidden = true; $('#result').hidden = false;
   } catch (error) { showError(error.message || 'Connection failed. Try again.'); }
   finally { setBusy(false); }
-});
-$('#download').addEventListener('click', () => {
-  if (!reading) return;
-  const url = URL.createObjectURL(new Blob([JSON.stringify(reading, null, 2)], { type: 'application/json' }));
-  const link = document.createElement('a'); link.href = url; link.download = 'paddylab-reading.json';
-  document.body.append(link); link.click(); link.remove(); setTimeout(() => URL.revokeObjectURL(url), 1000);
 });
 fetch('/api/status').then(async (response) => {
   const data = await response.json();

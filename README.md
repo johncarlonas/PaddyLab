@@ -1,6 +1,6 @@
 # PaddyLab
 
-A portfolio web app around the original six-class rice leaf CNN. The home page is the analyzer: upload a photo, try a test-set sample, inspect scores, and download the result. The About page at `/about` explains the project, model, result, and six class examples.
+A portfolio web app around the original six-class rice leaf CNN. The home page is the analyzer: upload a photo, try a test-set sample, and inspect class scores. The About page at `/about` explains the project, model, result, and six class examples.
 
 ## Run locally (Windows, Python 3.12)
 
@@ -26,7 +26,7 @@ The notebook uses `take` and `skip` on a shuffled dataset without a stable indep
 
 The checks cover upload validation, samples, preprocessing, API behavior, and real inference on a test image.
 
-`tests/browser.cjs` is an optional end-to-end check using Playwright and installed Microsoft Edge. With the app running and Playwright available to Node, run `node tests/browser.cjs`. It checks predictions, downloads, reset behavior, and mobile overflow, and saves screenshots in `tests/`.
+`tests/browser.cjs` is an optional end-to-end check using Playwright and installed Microsoft Edge. With the app running and Playwright available to Node, run `node tests/browser.cjs`. It checks predictions, reset behavior, and mobile overflow, and saves screenshots in `tests/`.
 
 ## Publishing
 
