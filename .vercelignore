@@ -1,0 +1,9 @@
+# Keep training and local development files out of Vercel uploads.
+.venv/
+__pycache__/
+*.pyc
+.env
+dataset/
+*.ipynb
+Rice Leaf Disease Detection v1.h5
+tests/

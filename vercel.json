@@ -1,0 +1,9 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "functions": {
+    "app.py": {
+      "includeFiles": "Rice Leaf Disease Detection v2.h5",
+      "excludeFiles": "{.venv/**,__pycache__/**,**/*.pyc,*.ipynb,dataset/**,tests/**,Rice Leaf Disease Detection v1.h5}"
+    }
+  }
+}

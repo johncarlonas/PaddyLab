@@ -1,11 +1,15 @@
+# Local environments and secrets
 .venv/
+.env
+
+# Training-only artifacts
+dataset/
+*.ipynb
+Rice Leaf Disease Detection v1.h5
+
+# Python and generated test output
 __pycache__/
 *.pyc
-.env
+tests/__pycache__/
 tests/*.png
 tests/*.jpg
-dataset/
-Rice Leaf Disease Detection v1.h5
-.venv/
-__pycache__/
-tests/__pycache__/

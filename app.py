@@ -19,7 +19,7 @@ DESCRIPTIONS = [
     'A class associated with leaf scald patterns in the original dataset. Treat the result as a visual comparison.',
     'A class associated with rice hispa damage. This is the insect-related class in the original dataset.',
 ]
-app = Flask(__name__)
+app = Flask(__name__, static_folder='public/static')
 app.config['MAX_CONTENT_LENGTH'] = 10 * 1024 * 1024
 model = None
 model_lock = threading.Lock()
@@ -66,7 +66,7 @@ def status():
 def sample(category):
     if category not in CLASSES:
         return jsonify(error='Unknown sample class.'), 404
-    sample_path = ROOT / 'static' / 'samples' / f'{category}.jpg'
+    sample_path = ROOT / 'public' / 'static' / 'samples' / f'{category}.jpg'
     if not sample_path.exists():
         return jsonify(error='Sample image unavailable.'), 404
     return send_file(sample_path, max_age=3600)
