@@ -5,7 +5,7 @@ import os
 import threading
 from pathlib import Path
 
-from flask import Flask, jsonify, render_template, request, send_file
+from flask import Flask, jsonify, redirect, render_template, request, send_file
 from PIL import Image, ImageOps, UnidentifiedImageError
 
 ROOT = Path(__file__).resolve().parent
@@ -41,9 +41,14 @@ def index():
     return render_template('index.html')
 
 
-@app.get('/classes')
-def classes():
+@app.get('/about')
+def about():
     return render_template('classes.html', guide=zip(CLASSES, LABELS, DESCRIPTIONS))
+
+
+@app.get('/classes')
+def legacy_classes():
+    return redirect('/about', code=308)
 
 
 @app.get('/api/status')

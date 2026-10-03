@@ -1,6 +1,6 @@
 # PaddyLab
 
-A portfolio web app around the original six-class rice leaf CNN. The home page is the analyzer: upload a photo, try a test-set sample, inspect scores, and download the result. The six class examples and model notes have their own page at `/classes`.
+A portfolio web app around the original six-class rice leaf CNN. The home page is the analyzer: upload a photo, try a test-set sample, inspect scores, and download the result. The About page at `/about` explains the project, model, result, and six class examples.
 
 ## Run locally (Windows, Python 3.12)
 

@@ -10,9 +10,12 @@ class AppChecks(unittest.TestCase):
 
     def test_home_and_samples(self):
         self.assertEqual(self.client.get('/').status_code, 200)
-        guide = self.client.get('/classes')
+        guide = self.client.get('/about')
         self.assertEqual(guide.status_code, 200)
         self.assertIn(b'class-list', guide.data)
+        legacy = self.client.get('/classes')
+        self.assertEqual(legacy.status_code, 308)
+        self.assertEqual(legacy.location, '/about')
         self.assertNotIn(b'class-list', self.client.get('/').data)
         for category in CLASSES:
             response = self.client.get('/api/samples/' + category)

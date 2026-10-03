@@ -1,10 +1,32 @@
 {% extends 'base.html' %}
 {% block title %}About - PaddyLab{% endblock %}
 {% block content %}
-  <section class="page-intro classes-intro" data-reveal>
-    <h1>The six <span>classes.</span></h1>
-    <p>The labels the model learned. Each photo comes from the original test dataset.</p>
+  <section class="page-intro about-intro" data-reveal>
+    <h1>About <span>PaddyLab</span></h1>
+    <p>PaddyLab turns my first AI model into a small web app for exploring rice leaf conditions. It was created as a project for the Introduction to Artificial Intelligence course.</p>
+    <p class="about-developer"><span>Developer:</span> <a href="https://johncarlonas.pages.dev" target="_blank" rel="noreferrer">John Carlo Nas</a></p>
   </section>
+
+  <section class="about-details" data-reveal>
+    <article class="about-detail">
+      <h2>Purpose</h2>
+      <p>The project explores how AI can support early screening of rice crop conditions. Upload a leaf photo to get a likely class and a confidence score that can guide further inspection.</p>
+    </article>
+    <article class="about-detail">
+      <h2>What kind of AI is this?</h2>
+      <p>This is supervised deep learning: a Convolutional Neural Network trained with TensorFlow and Keras on labelled RGB rice leaf images. It resizes each photo to 256 x 256 pixels and learns visual patterns across six classes.</p>
+    </article>
+    <article class="about-detail">
+      <h2>What the result means</h2>
+      <p>The project report records 89% overall accuracy. The model performed strongest for Bacterial Leaf Blight and Rice Hispa, while Brown Spot and Leaf Blast were harder because those classes were underrepresented. A result here is a model estimate, not a confirmed diagnosis.</p>
+    </article>
+  </section>
+
+  <section class="classes-section" data-reveal>
+    <div class="classes-heading">
+      <h2>The six classes</h2>
+      <p>The labels the model learned from the original rice leaf dataset.</p>
+    </div>
   <div class="class-list">
     {% for key, label, description in guide %}
     <article class="class-row" data-reveal>
@@ -13,11 +35,5 @@
     </article>
     {% endfor %}
   </div>
-  <section class="model-info" id="model" data-reveal>
-    <h2>About PaddyLab</h2>
-    <div class="model-info-body">
-      <p>This is the original CNN v2 from the student project. Three convolution blocks feed a dense classifier. Photos are resized to 256 × 256 pixels and normalized before prediction.</p>
-      <p>The model always chooses among these six labels, even for unrelated photos. Confidence is a softmax score. The notebook’s shuffled validation split needs an independent evaluation before reliable accuracy can be claimed.</p>
-    </div>
   </section>
 {% endblock %}
