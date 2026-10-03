@@ -53,7 +53,7 @@ async function loadSample(category) {
   if (!sampleKeys.includes(category)) return;
   const version = ++selectionVersion;
   try {
-    const response = await fetch(`/api/samples/${category}`);
+    const response = await fetch(`/static/samples/${category}.jpg`);
     if (!response.ok) throw new Error('Sample unavailable. Try uploading your own image.');
     const blob = await response.blob();
     if (version === selectionVersion && !busy) setFile(new File([blob], `${category}.jpg`, { type: blob.type }));

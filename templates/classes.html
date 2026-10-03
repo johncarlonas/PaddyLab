@@ -25,7 +25,7 @@
   <div class="class-list">
     {% for key, label, description in guide %}
     <article class="class-row" data-reveal>
-      <div class="class-photo"><img src="/api/samples/{{ key }}" alt="{{ label }} rice leaf from the test dataset" {% if not loop.first %}loading="lazy"{% endif %}></div>
+      <div class="class-photo"><img src="/static/samples/{{ key }}.jpg" alt="{{ label }} rice leaf from the test dataset" {% if not loop.first %}loading="lazy"{% endif %}></div>
       <div class="class-copy"><h2>{{ label }}</h2><p>{{ description }}</p></div>
     </article>
     {% endfor %}
