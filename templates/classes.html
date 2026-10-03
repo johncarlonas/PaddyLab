@@ -3,21 +3,17 @@
 {% block content %}
   <section class="page-intro about-intro" data-reveal>
     <h1>About <span>PaddyLab</span></h1>
-    <p>PaddyLab is my first AI model, created to explore rice leaf conditions. It was developed as my final project for the Introduction to Artificial Intelligence course.</p>
     <p class="about-developer"><span>Developer:</span> <a href="https://johncarlonas.pages.dev" target="_blank" rel="noreferrer">John Carlo Nas</a></p>
+    <p class="about-description">PaddyLab is my first AI model, created to explore rice leaf conditions. It was developed as my final project for the Introduction to Artificial Intelligence course. It explores how AI can support early screening of rice crop conditions. Upload a leaf photo to get a likely class and a confidence score that can guide further inspection.</p>
   </section>
 
   <section class="about-details" data-reveal>
-    <article class="about-detail">
-      <h2>Purpose</h2>
-      <p>The project explores how AI can support early screening of rice crop conditions. Upload a leaf photo to get a likely class and a confidence score that can guide further inspection.</p>
-    </article>
     <article class="about-detail">
       <h2>What kind of AI is this?</h2>
       <p>This is supervised deep learning: a Convolutional Neural Network trained with TensorFlow and Keras on labelled RGB rice leaf images. It resizes each photo to 256 x 256 pixels and learns visual patterns across six classes.</p>
     </article>
     <article class="about-detail">
-      <h2>What the result means</h2>
+      <h2>What the result means?</h2>
       <p>The project report records 89% overall accuracy. The model performed strongest for Bacterial Leaf Blight and Rice Hispa, while Brown Spot and Leaf Blast were harder because those classes were underrepresented. A result here is a model estimate, not a confirmed diagnosis.</p>
     </article>
   </section>
@@ -25,7 +21,6 @@
   <section class="classes-section" data-reveal>
     <div class="classes-heading">
       <h2>The Six Classes</h2>
-      <p>The labels the model learned from the original rice leaf dataset.</p>
     </div>
   <div class="class-list">
     {% for key, label, description in guide %}
