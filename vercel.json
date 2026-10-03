@@ -1,5 +1,6 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
+  "fluid": true,
   "functions": {
     "app.py": {
       "includeFiles": "Rice Leaf Disease Detection v2.h5",
