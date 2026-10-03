@@ -53,7 +53,7 @@ const assert = require('node:assert/strict');
   assert.equal(await page.locator('.class-row').count(), 6);
   assert.ok(page.url().endsWith('/about'));
   assert.equal(await page.title(), 'About - PaddyLab');
-  assert.equal(await page.getByRole('link', {name: 'Back to home', exact: true}).count(), 1);
+  assert.equal(await page.getByRole('link', {name: 'Back to Home', exact: true}).count(), 1);
   assert.equal(await page.locator('.back-link').evaluate(element => getComputedStyle(element).backgroundColor), 'rgb(32, 41, 31)');
   assert.equal(await page.locator('.back-link').evaluate(element => getComputedStyle(element).color), 'rgb(255, 255, 255)');
   assert.equal(await page.getByRole('link', {name: 'Analyze', exact: true}).count(), 0);
