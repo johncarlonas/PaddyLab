@@ -86,11 +86,12 @@ h1 span { color: var(--green); }
 .site-footer::before { content: ''; position: absolute; top: 38px; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, var(--line) 14%, var(--line) 86%, transparent); }
 .footer-brand { display: inline-flex; align-items: center; gap: 8px; font-weight: 600; }
 .footer-brand img { flex: 0 0 auto; }
+.page-intro.about-intro { padding-bottom: 0; }
 .page-intro.about-intro > p { max-width: none; margin-top: 18px; font-size: 16px; }
 .about-developer > span { color: var(--green); font-weight: 900; }
 .about-developer a { color: var(--ink); font-weight: 800; text-decoration: underline; text-decoration-color: var(--line); text-underline-offset: 5px; }
 .about-developer a:hover { text-decoration-color: var(--green); }
-.about-details { display: grid; grid-template-columns: 1fr; gap: 56px; padding: 58px 0 86px; }
+.about-details { display: grid; grid-template-columns: 1fr; gap: 56px; padding: 56px 0; }
 .about-detail:last-child { max-width: none; }
 .about-detail h2, .classes-heading h2 { font-size: clamp(26px, 3vw, 38px); font-weight: 900; line-height: 1.1; letter-spacing: -.05em; }
 .about-detail p { max-width: none; color: var(--muted); line-height: 1.85; margin-top: 16px; font-size: 16px; }
@@ -150,8 +151,8 @@ h1 span { color: var(--green); }
   .model-note { max-width: 310px; }
   .site-footer { padding-top: 54px; }
   .site-footer::before { top: 30px; }
-  .about-details { gap: 36px; padding: 40px 0 60px; }
-  .classes-section { padding-top: 42px; }
+  .about-details { gap: 36px; padding: 36px 0; }
+  .classes-section { padding-top: 0; }
   .classes-heading { margin-bottom: 28px; }
   .class-list { grid-template-columns: 1fr; gap: 44px; }
   .class-photo { aspect-ratio: 1.7; border-radius: 14px; }

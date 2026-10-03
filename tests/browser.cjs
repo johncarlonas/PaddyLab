@@ -43,7 +43,7 @@ const assert = require('node:assert/strict');
   assert.equal(await page.locator('.about-detail').count(), 2);
   assert.equal(await page.locator('.about-developer a').innerText(), 'John Carlo Nas');
   assert.equal(await page.locator('.about-intro > p').first().innerText(), 'Developer: John Carlo Nas');
-  assert.equal(await page.locator('.about-description').innerText(), 'PaddyLab is my first AI model, created to explore rice leaf conditions. It was developed as my final project for the Introduction to Artificial Intelligence course. It explores how AI can support early screening of rice crop conditions. Upload a leaf photo to get a likely class and a confidence score that can guide further inspection.');
+  assert.equal(await page.locator('.about-description').innerText(), 'PaddyLab is my first AI model, developed as my final project for the Introduction to Artificial Intelligence course. It explores rice leaf conditions by analyzing photos and suggesting a likely class with a confidence score for further inspection.');
   assert.equal(await page.locator('.about-detail h2').nth(1).innerText(), 'What the result means?');
   assert.equal(await page.locator('.classes-heading h2').innerText(), 'The Six Classes');
   assert.equal(await page.locator('.classes-heading p').count(), 0);
