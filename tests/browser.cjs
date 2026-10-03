@@ -42,6 +42,8 @@ const assert = require('node:assert/strict');
   assert.equal(await page.locator('.sample-link').count(), 0);
   assert.equal(await page.locator('.about-detail').count(), 3);
   assert.equal(await page.locator('.about-developer a').innerText(), 'John Carlo Nas');
+  assert.equal(await page.locator('.about-intro > p').first().innerText(), 'PaddyLab is my first AI model, created to explore rice leaf conditions. It was developed as my final project for the Introduction to Artificial Intelligence course.');
+  assert.equal(await page.locator('.classes-heading h2').innerText(), 'The Six Classes');
   assert.equal(await page.locator('.site-footer').innerText(), '© 2026 PaddyLab. All rights reserved.');
   assert.equal(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth), true);
   await page.emulateMedia({reducedMotion: 'reduce'});
