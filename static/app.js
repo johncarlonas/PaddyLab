@@ -104,6 +104,6 @@ $('#analyze').addEventListener('click', async () => {
 });
 fetch('/api/status').then(async (response) => {
   const data = await response.json();
-  $('#model-status').textContent = data.ready ? 'Ready to analyze' : 'Model unavailable';
+  $('#model-status').textContent = data.ready ? 'Ready' : 'Model unavailable';
   $('#model-status').className = `model-status ${data.ready ? 'ready' : 'unavailable'}`;
 }).catch(() => { $('#model-status').textContent = 'Server offline'; $('#model-status').className = 'model-status unavailable'; });

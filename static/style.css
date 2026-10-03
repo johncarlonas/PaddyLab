@@ -78,7 +78,7 @@ h1 span { color: var(--green); }
 .error, .uncertain { color: #9a5a35; font-size: 13px; margin-top: 16px; }
 .error:empty { display: none; }
 .analyzer-footer { border-top: 1px solid var(--line); display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 21px 28px; }
-.model-status { color: var(--muted); font-size: 12px; }
+.model-status { color: var(--muted); font-size: 17px; }
 .model-status.ready::before { content: ''; display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: var(--green); margin-right: 9px; vertical-align: middle; }
 .analyze { display: inline-flex; align-items: center; justify-content: center; gap: 0; border: 0; background: var(--green); color: white; padding: 13px 22px; border-radius: 9px; font-size: 15px; font-weight: 900; transition: background .2s; }
 .analyze:hover:enabled { background: #32633b; }
@@ -135,11 +135,14 @@ h1 span { color: var(--green); }
   .page-intro { padding-top: 22px; }
   h1 { font-size: 44px; max-width: 370px; }
   .page-intro > p { font-size: 16px; max-width: 300px; }
+  .page-intro:not(.about-intro) { text-align: center; }
+  .page-intro:not(.about-intro) > p { width: 100%; max-width: none; text-align: justify; text-align-last: center; }
   .about-intro h1, .about-intro .about-developer { text-align: center; }
   .analyzer { border-radius: 18px; }
   .analyzer-heading { padding: 18px 20px; }
   .analyzer-heading h2 { font-size: 15px; }
   .analyzer-heading .text-button { font-size: 12px; }
+  .analyzer-heading .model-status { font-size: 15px; }
   .analyzer-body { grid-template-columns: 1fr; }
   .image-panel { border-right: 0; padding: 20px 20px 0; }
   .dropzone { min-height: 285px; }
