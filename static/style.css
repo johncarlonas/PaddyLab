@@ -24,7 +24,11 @@ nav { display: flex; gap: 32px; align-items: center; font-size: 19px; font-weigh
 nav a { color: var(--muted); transition: color .2s; }
 nav a:hover, nav a[aria-current] { color: var(--ink); }
 nav a[aria-current] { text-decoration: underline; text-underline-offset: 7px; text-decoration-thickness: 2px; }
-nav span { margin-left: 4px; }
+nav a.about-link { display: inline-flex; align-items: center; justify-content: center; padding: 8px 14px; border-radius: 9px; background: var(--ink); color: white; }
+nav a.about-link:hover { background: #111811; color: white; }
+nav a.back-link { display: inline-flex; align-items: center; gap: 7px; }
+nav .back-arrow { margin-left: 0; font-size: 22px; line-height: 1; }
+nav .back-label-short { display: none; }
 .page-intro { padding: 27px 0 48px; }
 .page-intro:not(.about-intro) { padding-bottom: 28px; }
 h1, h2, h3, p { margin: 0; }
@@ -132,6 +136,8 @@ h1 span { color: var(--green); }
   .brand { font-size: 22px; gap: 7px; }
   .brand img { width: 26px; height: 26px; }
   nav { font-size: 16px; gap: 19px; }
+  nav .back-label-full { display: none; }
+  nav .back-label-short { display: inline; }
   .page-intro { padding-top: 22px; }
   h1 { font-size: 44px; max-width: 370px; }
   .page-intro > p { font-size: 16px; max-width: 300px; }

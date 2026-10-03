@@ -19,7 +19,11 @@
     <header class="site-header shell">
       <a class="brand" href="/" aria-label="PaddyLab home"><img src="/static/leaf.svg" alt="" width="30" height="30">PaddyLab</a>
       <nav aria-label="Main navigation">
-        <a href="/about" {% if request.path == '/about' %}aria-current="page"{% endif %}>About</a>
+        {% if request.path == '/about' %}
+        <a class="back-link" href="/" aria-label="Back to home"><span class="back-arrow" aria-hidden="true">←</span><span class="back-label-full">Back to home</span><span class="back-label-short">Back</span></a>
+        {% else %}
+        <a class="about-link" href="/about">About</a>
+        {% endif %}
         <a href="/" {% if request.path == '/' %}aria-current="page"{% endif %}>Analyze</a>
       </nav>
     </header>
