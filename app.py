@@ -12,12 +12,12 @@ ROOT = Path(__file__).resolve().parent
 CLASSES = ['bacterial_leaf_blight', 'brown_spot', 'healthy', 'leaf_blast', 'leaf_scald', 'rice_hispa']
 LABELS = ['Bacterial Leaf Blight', 'Brown Spot', 'Healthy', 'Leaf Blast', 'Leaf Scald', 'Rice Hispa']
 DESCRIPTIONS = [
-    'A class associated with blighted rice leaves. The model compares visual patterns with its training examples.',
-    'A class associated with brown spotting on rice leaves. Similar-looking damage can lead to incorrect predictions.',
-    'The image resembles healthy leaves in the training set. A healthy prediction does not rule out disease.',
-    'A class associated with leaf blast patterns. Lighting, background, and image quality can affect the reading.',
-    'A class associated with leaf scald patterns in the original dataset. Treat the result as a visual comparison.',
-    'A class associated with rice hispa damage. This is the insect-related class in the original dataset.',
+    'A bacterial disease that causes water-soaked lesions, yellowing, and straw-colored leaves as infection spreads.',
+    'A fungal disease marked by brown oval or circular spots that can spread across leaves and reduce crop yield.',
+    'Healthy leaves show no visible disease symptoms and retain an even green appearance, supporting normal growth.',
+    'A fungal disease that forms oval or diamond-shaped gray lesions with dark margins and yellow halos on rice leaves.',
+    'A fungal disease that creates expanding brown lesions on leaves, eventually causing affected tissue to die.',
+    'An insect pest that scrapes leaf surfaces and burrows into tissue, weakening photosynthesis and plant growth.',
 ]
 app = Flask(__name__, static_folder='public/static')
 app.config['MAX_CONTENT_LENGTH'] = 10 * 1024 * 1024
